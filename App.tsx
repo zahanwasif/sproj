@@ -12,9 +12,10 @@ import Loading from './src/components/loading';
 
 import {NavigationContainer} from '@react-navigation/native';
 import LoginStack from './src/navigation/loginStack';
-import MyDrawer from './src/navigation/drawer';
+
 import {Provider} from 'react-redux';
 import store from './src/redux/store';
+import BottomTab from './src/navigation/bottomTab';
 
 const theme: ReactNativePaper.Theme = {
   ...DefaultTheme,
@@ -49,7 +50,7 @@ const App: FC = () => {
         <NavigationContainer>
           <StatusBar barStyle="dark-content" />
           <PaperProvider theme={theme}>
-            {initializing ? <Loading /> : user ? <MyDrawer /> : <LoginStack />}
+            {initializing ? <Loading /> : user ? <BottomTab /> : <LoginStack />}
           </PaperProvider>
         </NavigationContainer>
       </Provider>
